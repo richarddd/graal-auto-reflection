@@ -1,6 +1,7 @@
 plugins {
     java
     maven
+    idea
 }
 
 group = "se.davison.graal.autoreflection"
