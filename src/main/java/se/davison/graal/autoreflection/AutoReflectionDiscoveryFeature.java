@@ -53,9 +53,12 @@ public class AutoReflectionDiscoveryFeature implements Feature {
                     shouldScan = true;
                     classInfo = classInfo.whitelistPackages(provider.packages(CLASS_GRAPH).toArray(new String[0]));
                 }
-                if (provider.classes(CLASS_GRAPH).size() > 0) {
+                if (provider.classes(CLASS_GRAPH).size() > 0 || provider.classNames(CLASS_GRAPH).size() > 0) {
                     shouldScan = true;
-                    classInfo = classInfo.whitelistClasses(provider.classes(CLASS_GRAPH).stream().map(Class::getName).toArray(String[]::new));
+                    classInfo = classInfo.whitelistClasses(
+                            Stream.concat(
+                                    provider.classes(CLASS_GRAPH).stream().map(Class::getName),
+                                    provider.classNames(CLASS_GRAPH).stream()).toArray(String[]::new));
                 }
                 if (shouldScan) {
                     for (ClassInfo providerInfo : classInfo.scan().getAllClasses()) {

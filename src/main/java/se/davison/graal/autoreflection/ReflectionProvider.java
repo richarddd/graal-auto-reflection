@@ -8,5 +8,7 @@ public interface ReflectionProvider {
 
     List<Class<?>> classes(ClassGraph classGraph);
 
+    List<String> classNames(ClassGraph classGraph);
+
     List<String> packages(ClassGraph classGraph);
 }

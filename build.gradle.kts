@@ -1,5 +1,5 @@
 plugins {
-    java
+    `java-library`
     maven
     idea
 }
@@ -16,9 +16,9 @@ val classGraphVersion = "4.8.43"
 
 dependencies {
 
-    compile("org.graalvm.sdk:graal-sdk:$graalVersion")
-    compile("com.oracle.substratevm:svm:$graalVersion")
-    compile("io.github.classgraph:classgraph:$classGraphVersion")
+    implementation("org.graalvm.sdk:graal-sdk:$graalVersion")
+    implementation("com.oracle.substratevm:svm:$graalVersion")
+    implementation("io.github.classgraph:classgraph:$classGraphVersion")
 
     testCompile("junit", "junit", "4.12")
 }
