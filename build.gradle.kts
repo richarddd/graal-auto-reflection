@@ -11,14 +11,14 @@ repositories {
     mavenCentral()
 }
 
-val graalVersion = "19.1.1"
+val graalVersion = "19.3.0"
 val classGraphVersion = "4.8.43"
 
 dependencies {
 
-    implementation("org.graalvm.sdk:graal-sdk:$graalVersion")
-    implementation("com.oracle.substratevm:svm:$graalVersion")
-    implementation("io.github.classgraph:classgraph:$classGraphVersion")
+    api("org.graalvm.sdk:graal-sdk:$graalVersion")
+    api("org.graalvm.nativeimage:svm:$graalVersion")
+    api("io.github.classgraph:classgraph:$classGraphVersion")
 
     testCompile("junit", "junit", "4.12")
 }
