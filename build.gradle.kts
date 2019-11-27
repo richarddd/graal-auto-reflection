@@ -18,7 +18,9 @@ val javaxServletVersion = "4.0.1"
 dependencies {
 
     api("org.graalvm.sdk:graal-sdk:$graalVersion")
-    api("org.graalvm.nativeimage:svm:$graalVersion")
+    api("org.graalvm.nativeimage:svm:$graalVersion") {
+        exclude("org.graalvm.compiler", "compiler")
+    }
     api("io.github.classgraph:classgraph:$classGraphVersion")
     api("javax.servlet:javax.servlet-api:$javaxServletVersion")
 
