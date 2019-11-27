@@ -13,12 +13,14 @@ repositories {
 
 val graalVersion = "19.3.0"
 val classGraphVersion = "4.8.43"
+val javaxServletVersion = "4.0.1"
 
 dependencies {
 
     api("org.graalvm.sdk:graal-sdk:$graalVersion")
     api("org.graalvm.nativeimage:svm:$graalVersion")
     api("io.github.classgraph:classgraph:$classGraphVersion")
+    api("javax.servlet:javax.servlet-api:$javaxServletVersion")
 
     testCompile("junit", "junit", "4.12")
 }
